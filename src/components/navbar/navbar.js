@@ -1,37 +1,48 @@
-import "bootstrap/dist/css/bootstrap.css";
-import {
-  Button,
-  Nav,
-  Navbar,
-  Form,
-  FormControl,
-  Container,
-} from "react-bootstrap";
-function NavBar() {
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "../landingpage/Body.css";
+function NavScrollExample() {
   return (
-    <>
-      <Navbar bg="dark" expand="lg" className="mb-3">
-        <Container>
-          <Navbar.Brand href="#home">Foodistan</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-            </Nav>
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placholder="search"
-                className="me-2"
-                aria-label="Search"
-              ></FormControl>
-              <Button variant="outline-success">Search</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+    <Navbar bg="light" expand="lg" className="p-5 shadow-lg">
+      <Container className="centering" fluid>
+        <Navbar.Brand href="#" className="">
+          Foodistan
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0 px-5"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link href="#action1" className="">
+              Home
+            </Nav.Link>
+            <Nav.Link href="#action2" className="">
+              About
+            </Nav.Link>
+            <Nav.Link href="#action3" className="">
+              Contact
+            </Nav.Link>
+          </Nav>
+          <Form className="d-flex flex-md-nowrap flex-wrap w-50 p-2">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success" className="w-auto h-auto">
+              Search
+            </Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
-export default NavBar;
+
+export default NavScrollExample;

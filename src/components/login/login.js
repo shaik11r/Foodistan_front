@@ -6,7 +6,7 @@ import LandingPage from "../landingpage/LandingPage";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const handleSubmit = async (event) => {
     console.log("signin clicked");
     event.preventDefault();

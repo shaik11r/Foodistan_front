@@ -1,0 +1,44 @@
+.centering{
+    width: 1300px;
+    margin:0 auto;
+}
+
+li{
+    font-family:cursive;
+    font-weight: 300;
+    font-size:20px;
+    margin-left: 35px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.CardBody{
+    padding-top:39px;
+    margin-top:-10px;
+    border-top:1px solid #e9e9eb;
+}
+.cardstyling{
+    width:18rem;
+    padding:10px;
+    border: 1px solid rgba(125, 9, 220, 0.903);
+    height: 19rem;
+}
+.na6kb{
+    font-size: 17px;
+    font-weight: 500;
+    word-break: break-word;
+    margin-top: 5px;
+}
+.cardstyling img{
+    padding: 10px;
+    width: 254px;
+}
+.cusines{
+    font-size: 17px;
+    font-weight: 200;
+    margin-top: 4px;
+}
+.lastline{
+    font-size:17px;
+    font-weight: 400;
+
+}
