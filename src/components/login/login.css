@@ -1,0 +1,45 @@
+.login{
+    box-sizing: border-box;
+    background-color:black;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.email{
+    padding: 5px;
+}
+input{
+    min-width: 300px;
+    padding: 12px;
+    border:1px solid purple;
+    border-radius:10px;
+    background-color: black;
+    font-size: 15px;
+}
+label{
+    font-weight: 700;
+    font-size: 20px;
+    color:white
+}
+button{
+    max-width: 100px;
+    width: 100%;
+    height:33px;
+    border-radius: 10px;
+    outline: none;
+    color:white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    background-color: purple;
+    border:1px solid rgb(213, 71, 213)
+}
+button:hover{
+    background-color:black
+}
+input:focus{
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.52);
+}
