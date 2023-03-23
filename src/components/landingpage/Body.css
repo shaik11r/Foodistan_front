@@ -1,5 +1,6 @@
 .centering{
-    width: 1300px;
+    max-width: 1300px;
+    width: 100%;
     margin:0 auto;
 }
 
@@ -18,15 +19,24 @@ li{
 }
 .cardstyling{
     width:18rem;
-    padding:10px;
+    padding:1rem;
+    margin:0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
     border: 1px solid rgba(125, 9, 220, 0.903);
     height: 19rem;
+    cursor:pointer;
+}
+.cardstyling:hover{
+    transform:scale(1.1) ;
 }
 .na6kb{
     font-size: 17px;
     font-weight: 500;
     word-break: break-word;
     margin-top: 5px;
+    padding: 0 5px;
+    text-overflow: ellipsis;
 }
 .cardstyling img{
     padding: 10px;
@@ -36,9 +46,26 @@ li{
     font-size: 17px;
     font-weight: 200;
     margin-top: 4px;
+    padding: 0 5px;
+   
 }
 .lastline{
-    font-size:17px;
+    font-size:16px;
     font-weight: 400;
-
+}
+.shimmer-card{
+    width: 18rem;
+    height: 19rem;
+    background-color: rgba(72, 69, 69, 0.361);
+    border:1px solid rgb(110, 105, 105,0.9);
+    padding:1rem;
+    border-radius: 0.25rem;
+    margin: 0.25rem;
+    cursor: pointer;
+}
+.shimmer-image{
+    padding: 10px;
+    width: 254px;
+    height:13rem;
+    background-color: rgba(17, 13, 13, 0.361)
 }

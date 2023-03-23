@@ -14,8 +14,8 @@ const NewCard = (props) => {
           })}
         </div>
         <div className="d-flex justify-content-evenly">
-          <h5>{data.avgRating}⭐</h5>
-          <h5>{data.deliveryTime}min</h5>
+          <h5 className="lastline">{data.avgRating}⭐</h5>
+          <h5 className="lastline">{data.deliveryTime}min</h5>
           <h5 className="lastline">{data.costForTwoString}</h5>
         </div>
       </div>

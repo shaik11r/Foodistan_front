@@ -3,14 +3,14 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import "bootstrap/dist/css/bootstrap.css";
+
 import "../landingpage/Body.css";
 function NavScrollExample() {
   return (
     <Navbar bg="light" expand="lg" className="p-5 shadow-lg">
       <Container className="centering" fluid>
-        <Navbar.Brand href="#" className="">
-          Foodistan
-        </Navbar.Brand>
+        <Navbar.Brand href="#">Foodistan</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
