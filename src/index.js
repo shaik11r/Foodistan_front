@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./components/landingpage/About";
+import RestPage from "./components/landingpage/newPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const appRouter = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/resturant",
+    element: <RestPage />,
   },
 ]);
 root.render(<RouterProvider router={appRouter} />);

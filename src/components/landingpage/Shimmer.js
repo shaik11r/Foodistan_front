@@ -6,6 +6,8 @@ const Shimmer = () => {
         .map((e) => (
           <div className="shimmer-card ">
             <div className="shimmer-image"></div>
+            <div className="shimmer_bar"></div>
+            <div className="shimmer_bar"></div>
           </div>
         ))}
     </div>
