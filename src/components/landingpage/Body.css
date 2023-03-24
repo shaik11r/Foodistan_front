@@ -26,6 +26,7 @@ li{
     border: 1px solid rgba(125, 9, 220, 0.903);
     height: 19rem;
     cursor:pointer;
+    background-color: rgb(30, 22, 22);
 }
 .cardstyling:hover{
     transform:scale(1.1) ;
@@ -68,4 +69,8 @@ li{
     width: 254px;
     height:13rem;
     background-color: rgba(17, 13, 13, 0.361)
+}
+.classtxt a{
+    text-decoration: none;
+    color: white;
 }
