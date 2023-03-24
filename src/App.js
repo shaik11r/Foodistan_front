@@ -1,12 +1,17 @@
 import "./App.css";
 import LoginPage from "./components/login/login";
+import NavBar from "./components/navbar/navbar"
+import Head from "./components/landingpage/Head"
+import Body from "./components/landingpage/Body";
 import "bootstrap/dist/css/bootstrap.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 function App() {
   return (
     <div className="back">
-      <LoginPage />
+      <NavBar />
+      <Head />
+      <Outlet/>
     </div>
   );
 }

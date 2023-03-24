@@ -110,3 +110,13 @@ li{
     width: 100%;
     height: 200px;
 }
+.resturant-head{
+    position: relative;
+}
+.resturant-button{
+    position:absolute;
+    max-width: 100px;
+    width: 100%;
+    left: 80px;
+    bottom: 10px;
+}
