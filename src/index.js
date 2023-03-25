@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./components/landingpage/About";
-import RestPage from "./components/landingpage/newPage";
+import RestPage from "./components/landingpage/ResturantPage";
 import Body from "./components/landingpage/Body";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const appRouter = createBrowserRouter([

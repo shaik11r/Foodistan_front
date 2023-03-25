@@ -120,3 +120,22 @@ li{
     left: 80px;
     bottom: 10px;
 }
+.head{
+    font-size:17px;
+}
+@media only screen and (max-width:700px){
+    .menu-container
+    {
+      display: none;
+    }
+    .menu-responsive{
+        display: block;
+    }
+}
+
+@media (min-width:701px) {
+    .form-select{
+        display: none;
+    }
+}
+  

@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { restUrl, imgurl } from "../../utils/Constants";
 import "./Body.css";
+import Shimmer from "./Shimmer";
 
 const RestPage = () => {
-  const [resData, setResData] = useState(null);
+  const [resData, setResData] = useState([]);
   const [resItems, setResItems] = useState([]);
   const id = useParams();
   console.log(id.id);
@@ -19,7 +20,9 @@ const RestPage = () => {
     setResData(resdata);
     setResItems(resitems);
   }
-  return (
+  return resData.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="resturant-page">
       <h1>{resData?.name}</h1>
       <h2>{resData?.city}</h2>
@@ -32,10 +35,7 @@ const RestPage = () => {
                 <div key={j} className="resturant-items">
                   <h4>{res?.card?.info?.name}</h4>
                   <div className="resturant-head">
-                    <img
-                      src={imgurl + res?.card?.info?.imageId}
-                      alt={res?.card?.info?.name}
-                    />
+                    <img src={imgurl + res?.card?.info?.imageId} alt="image" />
                     <div className="resturant-button">
                       <button>ADD</button>
                     </div>
