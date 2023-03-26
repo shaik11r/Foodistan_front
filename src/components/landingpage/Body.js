@@ -64,9 +64,13 @@ const Body = () => {
           {data.map((res) => {
             return <Card key={res.id} {...res} />;
           })}
-          {newdata.map((res) => {
-            return <NewCard key={res.id} {...res} />;
-          })}
+          {newdata.length === 0 ? (
+            <Shimmer />
+          ) : (
+            newdata.map((res) => {
+              return <NewCard key={res.id} {...res} />;
+            })
+          )}
         </div>
       </div>
     </>
