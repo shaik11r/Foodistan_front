@@ -1,7 +1,7 @@
-const Shimmer = () => {
+const Shimmer = (props) => {
   return (
     <div className="d-flex flex-wrap centering">
-      {Array(15)
+      {Array(props.number)
         .fill("")
         .map((e) => (
           <div className="shimmer-card ">

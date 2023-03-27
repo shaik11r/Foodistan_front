@@ -123,6 +123,34 @@ li{
 .head{
     font-size:17px;
 }
+.textarea input{
+    width: 400px;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius:1rem 0rem 0rem 1rem;
+}
+.textarea button{
+    border-radius:0 1rem 1rem 0rem;
+  
+}
+.suggestionbox{
+    position:absolute;
+    left:0.5rem;
+    background-color: black;
+    border-radius: 0.5rem;
+    color: white;
+    width:400px;
+   padding: 1rem;
+    z-index: 10;
+    list-style: none;
+}
+.suggestionbox li{
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5rem;
+    margin: 0;
+}
+
 @media only screen and (max-width:700px){
     .menu-container
     {

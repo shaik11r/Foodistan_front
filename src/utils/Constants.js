@@ -11,4 +11,6 @@ export const restUrl =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.385044&lng=78.486671&submitAction=ENTER";
 export const imgurl =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+export const SearchUrl =
+  "https://www.swiggy.com/dapi/restaurants/search/suggest?lat=17.385044&lng=78.486671&trackingId=undefined";
 export default Url;

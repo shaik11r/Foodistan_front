@@ -56,7 +56,7 @@ const Body = () => {
   // console.log(offset);
 
   return data.length === 0 ? (
-    <Shimmer />
+    <Shimmer number={16} />
   ) : (
     <>
       <div className="container-fluid centering">
@@ -65,7 +65,7 @@ const Body = () => {
             return <Card key={res.id} {...res} />;
           })}
           {newdata.length === 0 ? (
-            <Shimmer />
+            <Shimmer number={0} />
           ) : (
             newdata.map((res) => {
               return <NewCard key={res.id} {...res} />;

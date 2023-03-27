@@ -1,17 +1,34 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.css";
-
+import { useState, useEffect } from "react";
+import { SearchUrl } from "../../utils/Constants";
 import "../landingpage/Body.css";
 import { Link } from "react-router-dom";
 function NavScrollExample() {
+  const [query, setQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  useEffect(() => {
+    console.log(query);
+    setTimeout(() => fetchQueryData(), 200);
+    return;
+  }, [query]);
+  const fetchQueryData = async () => {
+    const data = await fetch(`${SearchUrl}&str=${query}`);
+    const res = await data.json();
+    const newdata = res.data.suggestions;
+    setSuggestions(newdata);
+  };
   return (
     <Navbar bg="dark" expand="lg" className="p-5 shadow-lg">
       <Container className="centering" fluid>
-        <Navbar.Brand href="#">Foodistan</Navbar.Brand>
+        <Navbar.Brand href="/" className="classtxt">
+          Foodistan
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -31,17 +48,32 @@ function NavScrollExample() {
               </Link>
             </div>
           </Nav>
-          <Form className="d-flex flex-md-nowrap flex-wrap w-50 p-2">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success" className="w-auto h-auto">
-              Search
-            </Button>
-          </Form>
+          <div className="textarea position-relative">
+            <div className="d-flex flex-md-nowrap flex-wrap w-auto p-2">
+              <input
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                }}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => setShowSuggestions(false)}
+              />
+              <Button variant="outline-success" className="w-auto h-auto">
+                Search
+              </Button>
+            </div>
+            {showSuggestions && (
+              <div className="suggestionbox">
+                {suggestions.map((element) => {
+                  return <li>{element.text}</li>;
+                })}
+              </div>
+            )}
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
