@@ -5,23 +5,40 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.css";
 import { useState, useEffect } from "react";
 import { SearchUrl } from "../../utils/Constants";
+import store from "../../utils/store";
 import "../landingpage/Body.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { cacheResults } from "../../utils/searchSlice";
 function NavScrollExample() {
+  const dispatch = useDispatch();
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-
+  const searchCache = useSelector((store) => store.search);
   useEffect(() => {
     console.log(query);
-    setTimeout(() => fetchQueryData(), 200);
-    return;
+    const Timer = setTimeout(() => {
+      if (searchCache[query]) {
+        setSuggestions(searchCache[query]);
+      } else {
+        fetchQueryData();
+      }
+    }, 200);
+    return () => {
+      clearTimeout(Timer);
+    };
   }, [query]);
   const fetchQueryData = async () => {
     const data = await fetch(`${SearchUrl}&str=${query}`);
     const res = await data.json();
     const newdata = res.data.suggestions;
     setSuggestions(newdata);
+    dispatch(
+      cacheResults({
+        [query]: newdata,
+      })
+    );
   };
   return (
     <Navbar bg="dark" expand="lg" className="p-5 shadow-lg">
