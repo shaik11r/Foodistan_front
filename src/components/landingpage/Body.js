@@ -7,7 +7,7 @@ import NewCard from "./NewCard";
 import "bootstrap/dist/css/bootstrap.css";
 import Shimmer from "./Shimmer";
 
-const Body = (props) => {
+const Body = () => {
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(15);
   const [first, setFirst] = useState(false);

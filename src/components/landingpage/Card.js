@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 const Card = (props) => {
   const url =
     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-  const data = props.data;
+  console.log(props);
+  const data = props?.data;
   return (
     <div className="card cardstyling classtxt">
       <Link to={`/resturant/${data.id}`}>
@@ -11,7 +12,7 @@ const Card = (props) => {
         <div>
           <div className="na6kb">{data.name}</div>
           <div className="d-flex cusines mt-1 mb-1 flex-wrap">
-            {data.cuisines.slice(0, 3).map((element, index) => {
+            {data?.cuisines?.slice(0, 3).map((element, index) => {
               return <h6 key={index}>{element} </h6>;
             })}
           </div>

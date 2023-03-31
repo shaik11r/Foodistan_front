@@ -2,21 +2,22 @@ import "./Body.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { SortUrl } from "../../utils/Constants";
 import { useEffect, useState } from "react";
+import Card from "./Card";
 const Head = () => {
-  const [sortMethod, setSortMethod] = useState("");
-
+  const [sortMethod, setSortMethod] = useState("RELEVANCE");
+  const [sortdata, setSortData] = useState([]);
+  const [showSort, setShowSort] = useState(false);
   useEffect(() => {
     fetchsortData();
   }, [sortMethod]);
   function handleClick(type) {
     setSortMethod(type);
-    console.log(type);
-    console.log(sortMethod);
   }
   async function fetchsortData() {
     const sortdata = await fetch(`${SortUrl}&sortBy=${sortMethod}`);
     const res = await sortdata.json();
-    console.log(res.data.cards[0].data.data.cards);
+    const fdata = res.data.cards[0].data.data.cards;
+    setSortData(fdata);
   }
   return (
     <div className="centering">
@@ -65,6 +66,10 @@ const Head = () => {
           </select>
         </div>
       </div>
+      {sortdata.length > 8 &&
+        sortdata.map((value) => {
+          return <Card key={value.data.id} {...value} />;
+        })}
     </div>
   );
 };
