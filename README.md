@@ -1,4 +1,4 @@
-<h1>Features</h1>
+#Features
 -Shimmer Effect
 -infinte scrolling
 -routing

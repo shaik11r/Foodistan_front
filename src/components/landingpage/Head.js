@@ -66,10 +66,15 @@ const Head = () => {
           </select>
         </div>
       </div>
-      {sortdata.length > 8 &&
-        sortdata.map((value) => {
-          return <Card key={value.data.id} {...value} />;
-        })}
+      {sortdata.length > 8 && (
+        <div className="container-fluid centering">
+          <div className="CardBody d-flex flex-wrap">
+            {sortdata.map((value) => {
+              return <Card key={value.data.id} {...value} />;
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
