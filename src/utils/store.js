@@ -22,4 +22,13 @@ export default store;
  * );
  * export const {togglemenu}=appslice.actions;
  * export default appslice.reducer;
+ * 
+ * import {configureStore} from '@reduxkjs/toolkit'
+ * import searchSlice from './searchSlice.js'
+ * const store=configureStore({
+ * reducer:{
+ * search:searchSlice,
+ * },
+ * });
+ * export default store;
  */

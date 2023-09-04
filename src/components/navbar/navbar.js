@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.css";
 import { useState, useEffect } from "react";
 import { SearchUrl } from "../../utils/Constants";
-import store from "../../utils/store";
 import "../landingpage/Body.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

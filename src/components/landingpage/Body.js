@@ -17,7 +17,8 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  async function fetchData() {
+
+    async function fetchData() {
     const appData = await fetch(Url);
     const res = await appData.json();
     const data = res.data.cards[2].data.data.cards;
@@ -25,7 +26,7 @@ const Body = () => {
     setFirst(true);
   }
 
-  useEffect(() => {
+ useEffect(() => {
     const handleScroll = () => {
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         setOffset((prev) => prev + 16);
@@ -34,14 +35,12 @@ const Body = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
+ useEffect(() => {
     if (offset < 100) {
       newFetchData();
     }
   }, [offset]);
-
-  async function newFetchData() {
+async function newFetchData() {
     if (first) {
       const newAppData = await fetch(baseurl + `&offset=${offset}`);
       const res = await newAppData.json();
@@ -54,7 +53,6 @@ const Body = () => {
 
   // console.log(newdata);
   // console.log(offset);
-
   return data.length === 0 ? (
     <Shimmer number={16} />
   ) : (

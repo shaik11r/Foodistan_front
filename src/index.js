@@ -28,6 +28,17 @@ const appRouter = createBrowserRouter([
   },
 ]);
 root.render(<RouterProvider router={appRouter} />);
+/**
+ * const approuter=createBrowserRouter([
+ * {path:"/",
+ * element:<App/>
+ * children:[
+ * {
+ * path:"/"
+ * element:<Body/>
+ * }]
+ * }])
+ */
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
